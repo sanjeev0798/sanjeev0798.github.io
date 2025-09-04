@@ -93,7 +93,7 @@ export const siteConfig = {
   ],
   education: [
     {
-      school: 'Albert-Ludwigs-Universität Freiburg, Germany',
+      school: 'Albert-Ludwigs-Universität Freiburg, Freiburg, Germany',
       degree: 'M.Sc. Embedded Systems Engineering Specializing in AI',
       dateRange: 'May 2020 – Nov 2023',
       achievements: []
