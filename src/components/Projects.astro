@@ -1,16 +1,34 @@
 ---
 import { siteConfig } from "../config";
-const projects = (siteConfig.projects ?? []).map(p => ({ ...p, category: p.category ?? "Others" }));
-const ORDER = ["Embedded", "AI", "Others"]; // display order
-const grouped = ORDER.map(cat => ({
-  cat,
-  items: projects.filter(p => p.category === cat)
-})).filter(g => g.items.length > 0);
+
+// 1) Normalize every project’s category (case/spacing) with a safe default
+const raw = siteConfig.projects ?? [];
+const norm = raw.map((p) => {
+  const rawCat = (p.category ?? "Others");
+  const key = String(rawCat).trim().toLowerCase(); // e.g., " others " -> "others"
+  return { ...p, _catKey: key };
+});
+
+// 2) Canonical labels + display order
+const LABELS: Record<string, string> = {
+  embedded: "Embedded",
+  ai: "AI",
+  others: "Others",
+};
+const ORDER = ["embedded", "ai", "others"];
+
+// 3) Group by normalized key, in fixed order
+const grouped = ORDER.map((key) => ({
+  key,
+  label: LABELS[key],
+  items: norm.filter((p) => p._catKey === key),
+})).filter((g) => g.items.length > 0);
 ---
 
 {grouped.length > 0 && (
   <section id="projects" class="px-6 sm:px-8 md:px-12 lg:px-16 py-12 sm:py-16 bg-gray-50">
     <div class="max-w-6xl mx-auto">
+      <!-- Heading -->
       <div class="mb-6 sm:mb-8">
         <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight text-gray-900">
           Projects
@@ -18,14 +36,16 @@ const grouped = ORDER.map(cat => ({
         <div class="w-[75px] h-[5px] mt-2 rounded-full" style={`background-color: ${siteConfig.accentColor}`}></div>
       </div>
 
-      {grouped.map(({cat, items}) => (
+      <!-- Groups -->
+      {grouped.map(({ label, items }) => (
         <div class="mb-10 last:mb-0">
-          <h3 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">{cat}</h3>
+          <h3 class="text-2xl sm:text-3xl font-semibold text-gray-900 mb-4">{label}</h3>
+
           <div class="space-y-6">
             {items.map((project) => {
               const skills = project.skills ?? [];
               const isLink = !!project.link;
-              const Component = isLink ? 'a' : 'div';
+              const Component = isLink ? "a" : "div";
               const linkProps = isLink ? { href: project.link, target: "_blank", rel: "noreferrer" } : {};
               return (
                 <div class="group">
@@ -39,10 +59,14 @@ const grouped = ORDER.map(cat => ({
                       <h4 class="text-xl sm:text-2xl font-semibold text-gray-900">{project.name}</h4>
                       {isLink && <span class="text-sm text-gray-500 group-hover:text-gray-800">View →</span>}
                     </div>
+
                     <p class="text-gray-600 mt-2">{project.description}</p>
+
                     {skills.length > 0 && (
                       <div class="mt-3 flex flex-wrap gap-2">
-                        {skills.map((s) => <span class="px-2 py-1 bg-gray-100 rounded-md text-sm">{s}</span>)}
+                        {skills.map((s) => (
+                          <span class="px-2 py-1 bg-gray-100 rounded-md text-sm">{s}</span>
+                        ))}
                       </div>
                     )}
                   </Component>
