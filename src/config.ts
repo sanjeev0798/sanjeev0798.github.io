@@ -28,36 +28,38 @@ export const siteConfig = {
   ],
   projects: [
     {
-      name: 'Optimizing Predictive Maintenance with Automated Data Selection',
+      name:
+          'Optimizing Predictive Maintenance through automated data selection',
       description:
           'Developed an automated sensor data selection pipeline for black-box predictive maintenance models, improving accuracy and stability across two real-world customer datasets.',
-      link: '#',  // Optional: link to GitHub demo with open dataset
-      skills: [
-        'Python', 'Feature selection', 'Time-series analysis',
-        'Sensor data analysis', 'AI Integration'
-      ],
+      link: '#',
+      skills: ['C++', 'Python', 'STM32'],
+      category: 'AI'
     },
     {
       name: 'Escape Room Puzzle IoT System',
       description:
           'Designed and Built an IoT-controlled puzzle game as part of escape room challenge with OTA firmware updates and MQTT communication.',
       link: 'https://github.com/ubilab-ws21/puzzle-1',
-      skills: ['C++', 'ESP32', 'MQTT', 'OTA Updates'],
+      skills: ['C++', 'C', 'ESP32', 'MQTT', 'OTA'],
+      category: 'Embedded'
     },
     {
       name: 'Trolbot – RFID-Based Retail Automation',
       description:
-          'Designed a retail cart automation prototype with MSP430 & CC3200 microcontrollers, integrating RFID scanning and cloud connectivity. Quarterfinalist in the DST & TI Innovation Challenge 2018–2019.',
+          'Designed a retail cart automation prototype with MSP430 & CC3200 microcontrollers, integrating RFID scanning and cloud connectivity.',
       link: '#',
-      skills: ['MSP430', 'CC3200', 'RFID', 'Cloud Integration'],
+      skills: ['C', 'MSP430', 'CC3200', 'RFID', 'Cloud Integration'],
+      category: 'Embedded'
     },
     {
       name: 'Process Data Surveillance using IoT',
       description:
-          'Implemented mobile monitoring for industrial sensors using NodeMCU with cloud connectivity. Published in IJRTE journal.',
-      link: 'https://www.ijrte.org/portfolio-item/F2373037619/',
-      skills: ['NodeMCU', 'MQTT', 'Cloud Integration'],
-    },
+          'Implemented mobile monitoring for industrial sensors using NodeMCU with cloud connectivity.',
+      link: '#',
+      skills: ['C', 'NodeMCU', 'Cloud Integration'],
+      category: 'Embedded'
+    }
   ],
   experience: [
     {
