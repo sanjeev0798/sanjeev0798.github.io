@@ -35,7 +35,7 @@ export const siteConfig = {
       description:
           'Developed an automated sensor data selection pipeline for black-box predictive maintenance models, improving accuracy and stability across two real-world customer datasets.',
       link: '#',
-      skills: ['C++', 'Python', 'STM32'],
+      skills: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib'],
       category: 'AI'
     },
     {
@@ -50,7 +50,7 @@ export const siteConfig = {
       name: 'Trolbot – RFID-Based Retail Automation',
       description:
           'Designed a retail cart automation prototype with MSP430 & CC3200 microcontrollers, integrating RFID scanning and cloud connectivity.',
-      link: '#',
+      link: 'https://github.com/sanjeev0798/Trolbot',
       skills: ['C', 'MSP430', 'CC3200', 'RFID', 'Cloud Integration'],
       category: 'Embedded'
     },
@@ -69,6 +69,14 @@ export const siteConfig = {
       link: 'https://memorything-object.streamlit.app/',
       skills: ['Python'],
       category: 'Others'
+    },
+    {
+      name: 'Heart Disease Classification',
+      description:
+          'Developed a machine learning model capable of predicting whether or not someone has heart disease based on their medical attributes.',
+      link: 'https://github.com/sanjeev0798/Heart_disease_classification',
+      skills: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib'],
+      category: 'AI'
     },
   ],
   experience: [
