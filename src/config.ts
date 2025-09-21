@@ -2,7 +2,9 @@ export const siteConfig = {
   name: 'Sanjeev Ramachandran',
   title: 'Embedded Software Engineer | C / C++ / Python | IoT & AI | RTOS',
   description: 'Portfolio website of Sanjeev Ramachandran',
-  accentColor: '#1d4ed8',  // Deep blue accent
+  accentColor: '#06b6d4',
+
+  heroBlurb: 'Embedded software + applied AI for sensors and edge devices.',
 
   social: {
     email: 'sanjeev.ramachandran07@gmail.com',
@@ -56,10 +58,18 @@ export const siteConfig = {
       name: 'Process Data Surveillance using IoT',
       description:
           'Implemented mobile monitoring for industrial sensors using NodeMCU with cloud connectivity.',
-      link: '#',
+      link: 'https://www.ijrte.org/portfolio-item/F2373037619/',
       skills: ['C', 'NodeMCU', 'Cloud Integration'],
       category: 'Embedded'
-    }
+    },
+    {
+      name: 'Memory Thing',
+      description:
+          'Developed a web app to generate personalized 3D-printable memorial object ideas using AI.',
+      link: 'https://memorything-object.streamlit.app/',
+      skills: ['Python'],
+      category: 'Others'
+    },
   ],
   experience: [
     {
