@@ -113,7 +113,7 @@ export const siteConfig = {
     {
       school:
           'Dr. Mahalingam College of Engineering and Technology, Pollachi, India',
-      degree: 'B.E. Electronics and Instrumentation Engineering',
+      degree: 'B.E. Electronics and Instrumentation',
       dateRange: 'Jul 2015 – Apr 2019',
       achievements: []
     },
